@@ -23,7 +23,7 @@ createApp({
             items :[
                 item1 = {
                     text : "fare la spesa",
-                    done : false,
+                    done : true,
                 },
                 item2 = {
                     text : "fare la cena",
