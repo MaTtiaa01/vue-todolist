@@ -9,12 +9,19 @@
   </head>
   <body>
     
-    <div id="app">
-        <ul>
-            <li v-for="(item,i) in items" :class="(item.done === true ? 'done' : '' )" >{{item.text}}
-                <span @click="remove(i)" :class="(croce  ? 'd-none' : '')">x</span>
-            </li>
-        </ul>
+    <div id="app" >
+      <div class="container p-5 ">
+        <div class="commands text-center mb-3">
+
+          <input type="text" v-model="newTask.text">
+          <button @click.stop="addTask">Add task</button>
+        </div>
+          <ul>
+              <li v-for="(item,i) in items" :class="(item.done === true ? 'done' : '' )" >{{item.text}}
+                  <span @click="remove(i)" :class="(croce  ? 'd-none' : '')">x</span>
+              </li>
+          </ul>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>

@@ -11,7 +11,8 @@
 // Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
 
 // MILESTONE 3
-// Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+// Predisporre un campo di input testuale e un pulsante "aggiungi": 
+//cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
 
 
 
@@ -21,6 +22,10 @@ createApp({
     data(){
         return{
             croce: "",
+            newTask : {
+                text:"",
+                done: false
+            },
             items :[
                 item1 = {
                     text : "fare la spesa",
@@ -33,7 +38,8 @@ createApp({
                 item3 = {
                     text : "andare a scuola",
                     done : false,
-                }
+                },
+                
             ]
 
             
@@ -42,6 +48,12 @@ createApp({
     methods : {
         remove(i){
             this.items.splice(i,1)
+        },
+        addTask(){
+            this.items.unshift(this.newTask);
+            console.log(this.items);
+            
         }
+
     }
 }).mount('#app')
