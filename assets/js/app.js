@@ -22,20 +22,17 @@ createApp({
     data(){
         return{
             croce: "",
-            newTask : {
-                text:"",
-                done: false
-            },
+            text: "",
             items :[
-                item1 = {
+                {
                     text : "fare la spesa",
                     done : true,
                 },
-                item2 = {
+                {
                     text : "fare la cena",
                     done : false,
                 },
-                item3 = {
+                {
                     text : "andare a scuola",
                     done : false,
                 },
@@ -50,8 +47,12 @@ createApp({
             this.items.splice(i,1)
         },
         addTask(){
-            this.items.unshift(this.newTask);
-            console.log(this.items);
+            const newTask = {
+                text : this.text,
+                done: false
+            }
+            this.items.unshift(newTask)
+            this.text = ""
             
         }
 

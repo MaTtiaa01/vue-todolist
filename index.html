@@ -13,12 +13,12 @@
       <div class="container p-5 ">
         <div class="commands text-center mb-3">
 
-          <input type="text" v-model="newTask.text">
+          <input type="text" v-model="text">
           <button @click.stop="addTask">Add task</button>
         </div>
           <ul>
-              <li v-for="(item,i) in items" :class="(item.done === true ? 'done' : '' )" >{{item.text}}
-                  <span @click="remove(i)" :class="(croce  ? 'd-none' : '')">x</span>
+              <li v-for="(item,i) in items" :class="(item.done === true ? 'done' : '' )" @click="" >{{item.text}}
+                  <span @click.stop="remove(i)" :class="(croce  ? 'd-none' : '')">x</span>
               </li>
           </ul>
       </div>
