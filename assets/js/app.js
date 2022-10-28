@@ -20,6 +20,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            croce: "",
             items :[
                 item1 = {
                     text : "fare la spesa",
@@ -36,6 +37,11 @@ createApp({
             ]
 
             
+        }
+    },
+    methods : {
+        remove(i){
+            this.items.splice(i,1)
         }
     }
 }).mount('#app')
