@@ -17,7 +17,7 @@
           <button @click="addTask" >Add task</button>
         </div>
           <ul>
-              <li v-for="(item,i) in items" :class="(item.done === true ? 'done' : '' )" @click="" >{{item.text}}
+              <li v-for="(item,i) in items" :class="(item.done === true ? 'done' : '' )" @click="doneUndone(item)" >{{item.text}}
                   <span @click.stop="remove(i)" :class="(croce  ? 'd-none' : '')">x</span>
               </li>
           </ul>

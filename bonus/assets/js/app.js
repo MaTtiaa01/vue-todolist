@@ -55,8 +55,14 @@ createApp({
                 done: false
             }
             this.items.unshift(newTask)
-            this.text = ""
-            
+            this.text = "" 
+        },
+        doneUndone(item){
+            if (item.done === true) {
+                item.done = false
+            }else{
+                item.done = true
+            }
         }
 
     }
